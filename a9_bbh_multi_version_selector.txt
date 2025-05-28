@@ -20,7 +20,7 @@ Your task is to analyze summaries of multiple generated versions of a Binary Bla
 **Output Requirements:**
 Your response MUST be a JSON object with the following structure:
 ```json
-{
+{{
   "best_version_id": "vX", // The version_id of the selected best version, or "None" if no version is acceptable.
   "selection_criteria_met": [
     "Criterion A: Why it was met by the best version (or why it was best among others)",
@@ -30,12 +30,12 @@ Your response MUST be a JSON object with the following structure:
     "Minor issue 1 in best_version",
     "Area for future improvement in best_version"
   ],
-  "reasons_for_rejecting_others": { // Optional, if you want to detail why others weren't chosen
+  "reasons_for_rejecting_others": {{ // Optional, if you want to detail why others weren't chosen
     "vY": ["Reason 1 for rejecting vY", "Reason 2 for rejecting vY"],
     "vZ": ["Reason for rejecting vZ"]
-  },
+  }},
   "overall_reasoning": "A concise summary explaining why the best_version_id was chosen over others, highlighting its key strengths in relation to the specifications and evaluation criteria. If no version is acceptable, explain why."
-}
+}}
 
 **Selection Criteria:**
 1.  **Functionality & Specification Adherence (Highest Priority):**
