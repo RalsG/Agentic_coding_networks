@@ -9,6 +9,8 @@ import time
 import json
 import shutil
 import ast
+import scri
+import h5py
 
 
 PROMPT_DIR = "Prompts" # Or an absolute path if needed
@@ -176,7 +178,7 @@ def generate_llm_response(prompt_template: str, agent_safety_settings: dict | No
     logger.debug(
         f"--- PROMPT SENT TO LLM (length: {len(prompt)}) ---\n{prompt_log_snippet}\n--- END PROMPT SNIPPET ---")
 
-    max_retries = 5
+    max_retries = 3
 
     generation_config = genai.types.GenerationConfig(
         max_output_tokens=32768,
@@ -453,11 +455,11 @@ import time
 
 def main():
     N_CODE_VERSIONS = 3
-    MAX_FIX_ATTEMPTS_PER_VERSION = 15
+    MAX_FIX_ATTEMPTS_PER_VERSION = 5
     # Changed dir name
-    OUTPUT_BASE_DIR = "bbh_visualization_python_project_v1"
+    OUTPUT_BASE_DIR = "bbh_visualization_python_project_v1" # Name a folder to be created for all the output
 
-    path_to_your_existing_code = "bbh_visualization_python_project_v1" # CHANGE THIS
+    path_to_your_existing_code = "<path>" # CHANGE THIS
     existing_code_content = ""
     try:
         with open(path_to_your_existing_code, "r", encoding="utf-8") as f:
